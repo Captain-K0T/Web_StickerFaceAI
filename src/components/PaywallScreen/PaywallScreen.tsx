@@ -2,7 +2,12 @@ import { useState } from 'react';
 import './PaywallScreen.css';
 import stickerExample from '../../assets/3-1.png';
 
-const PaywallScreen = () => {
+// Добавляем пропс onNavigate
+type PaywallScreenProps = {
+  onNavigate: () => void;
+};
+
+const PaywallScreen = ({ onNavigate }: PaywallScreenProps) => {
   const [selectedPlan, setSelectedPlan] = useState('popular');
 
   const handlePlanSelect = (plan: string) => {
@@ -65,7 +70,8 @@ const PaywallScreen = () => {
         </div>
       </div>
 
-      <button className="paywall-cta-button">
+      {/* Привязываем onNavigate к кнопке */}
+      <button className="paywall-cta-button" onClick={onNavigate}>
         Buy credits and create sticker pack →
       </button>
     </div>
