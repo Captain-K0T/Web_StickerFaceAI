@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './FeaturesScreen.css';
 
 import photoOriginal from '../../assets/2-1-1.png';
@@ -8,13 +9,9 @@ import textExample from '../../assets/2-3-1.png';
 
 type Tab = 'photo' | 'styles' | 'text';
 
-// Добавляем пропс onNavigate
-type FeaturesScreenProps = {
-  onNavigate: () => void;
-};
-
-const FeaturesScreen = ({ onNavigate }: FeaturesScreenProps) => {
+const FeaturesScreen = () => {
   const [activeTab, setActiveTab] = useState<Tab>('photo');
+  const navigate = useNavigate();
 
   return (
     <div className="features-container">
@@ -88,8 +85,7 @@ const FeaturesScreen = ({ onNavigate }: FeaturesScreenProps) => {
         </div>
       </div>
 
-      {/* Привязываем onNavigate к кнопке */}
-      <button className="features-cta-button" onClick={onNavigate}>
+      <button className="features-cta-button" onClick={() => navigate('/upload')}>
         Great, I'm ready! →
       </button>
     </div>

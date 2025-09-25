@@ -1,13 +1,11 @@
+import { useNavigate } from 'react-router-dom';
 import './StartScreen.css';
 import userPhoto from '../../assets/1-1.png';
 import stickerPhoto from '../../assets/1-2.png';
 
-// Определяем тип для наших пропсов
-type StartScreenProps = {
-  onNavigate: () => void;
-};
+const StartScreen = () => {
+  const navigate = useNavigate();
 
-const StartScreen = ({ onNavigate }: StartScreenProps) => {
   return (
     <div className="start-screen-container">
       <div className="images-container">
@@ -20,8 +18,7 @@ const StartScreen = ({ onNavigate }: StartScreenProps) => {
       <p className="description">
         Upload one photo — get 20+ unique stickers in Anime, Ghibli, or GTA style.
       </p>
-      {/* Добавляем обработчик onClick */}
-      <button className="cta-button" onClick={onNavigate}>
+      <button className="cta-button" onClick={() => navigate('/features')}>
         Create your sticker pack →
       </button>
     </div>

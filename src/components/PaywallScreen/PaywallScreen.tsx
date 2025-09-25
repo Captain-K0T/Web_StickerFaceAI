@@ -1,13 +1,10 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './PaywallScreen.css';
 import stickerExample from '../../assets/3-1.png';
 
-// Добавляем пропс onNavigate
-type PaywallScreenProps = {
-  onNavigate: () => void;
-};
-
-const PaywallScreen = ({ onNavigate }: PaywallScreenProps) => {
+const PaywallScreen = () => {
+  const navigate = useNavigate();
   const [selectedPlan, setSelectedPlan] = useState('popular');
 
   const handlePlanSelect = (plan: string) => {
@@ -70,8 +67,7 @@ const PaywallScreen = ({ onNavigate }: PaywallScreenProps) => {
         </div>
       </div>
 
-      {/* Привязываем onNavigate к кнопке */}
-      <button className="paywall-cta-button" onClick={onNavigate}>
+      <button className="paywall-cta-button" onClick={() => navigate('/error')}>
         Buy credits and create sticker pack →
       </button>
     </div>

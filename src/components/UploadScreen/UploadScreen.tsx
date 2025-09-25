@@ -1,11 +1,9 @@
 import { useState, useEffect, useRef, ChangeEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './UploadScreen.css';
 
-type UploadScreenProps = {
-  onNavigate: () => void;
-};
-
-const UploadScreen = ({ onNavigate }: UploadScreenProps) => {
+const UploadScreen = () => {
+  const navigate = useNavigate();
   const [isProcessing, setIsProcessing] = useState(false);
   const [fileName, setFileName] = useState('');
   const [imagePreview, setImagePreview] = useState<string | null>(null);
@@ -47,7 +45,6 @@ const UploadScreen = ({ onNavigate }: UploadScreenProps) => {
 
     return () => clearInterval(interval);
   }, [isProcessing]);
-
 
   const handleUploadBoxClick = () => {
     fileInputRef.current?.click();
@@ -110,7 +107,7 @@ const UploadScreen = ({ onNavigate }: UploadScreenProps) => {
       </div>
 
       {isComplete && (
-        <button className="upload-cta-button" onClick={onNavigate}>
+        <button className="upload-cta-button" onClick={() => navigate('/contact')}>
           Show result →
         </button>
       )}

@@ -1,15 +1,12 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './ContactScreen.css';
 
-// Make sure wa.svg and tg.svg are in the src/assets/ folder
 import whatsAppIcon from '../../assets/wa.svg';
 import telegramIcon from '../../assets/tg.svg';
 
-type ContactScreenProps = {
-  onNavigate: () => void;
-};
-
-const ContactScreen = ({ onNavigate }: ContactScreenProps) => {
+const ContactScreen = () => {
+  const navigate = useNavigate();
   const [phoneNumber, setPhoneNumber] = useState('');
   const [selectedMessenger, setSelectedMessenger] = useState<'whatsapp' | 'telegram' | null>(null);
 
@@ -57,7 +54,7 @@ const ContactScreen = ({ onNavigate }: ContactScreenProps) => {
 
       <button 
         className="contact-cta-button" 
-        onClick={onNavigate}
+        onClick={() => navigate('/paywall')}
         disabled={isButtonDisabled}
       >
         Get my stickers →
