@@ -6,8 +6,11 @@ import UploadScreen from './components/UploadScreen/UploadScreen';
 import ContactScreen from './components/ContactScreen/ContactScreen';
 import PaywallScreen from './components/PaywallScreen/PaywallScreen';
 import ErrorScreen from './components/ErrorScreen/ErrorScreen';
+import { usePageTracking } from './hooks/usePageTracking'; // <-- Импорт хука
 
 function App() {
+  usePageTracking(); // <-- Вызов хука для отслеживания страниц
+
   return (
     <Routes>
       <Route path="/" element={<StartScreen />} />

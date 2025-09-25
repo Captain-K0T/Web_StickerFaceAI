@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './PaywallScreen.css';
 import stickerExample from '../../assets/3-1.png';
+import { event as trackFacebookEvent } from '../../analytics/facebookPixel'; // <-- Импорт трекера событий
 
 const PaywallScreen = () => {
   const navigate = useNavigate();
@@ -9,6 +10,16 @@ const PaywallScreen = () => {
 
   const handlePlanSelect = (plan: string) => {
     setSelectedPlan(plan);
+  };
+
+  // Новая функция для обработки клика по кнопке
+  const handleBuyClick = () => {
+    // Отправляем событие в Facebook Pixel
+    // Можно добавить логику для отправки разных цен в зависимости от выбранного тарифа
+    trackFacebookEvent('Subscribe', { value: '9.99', currency: 'USD' }); 
+    
+    // Переходим на страницу с ошибкой
+    navigate('/error');
   };
 
   return (
@@ -67,7 +78,8 @@ const PaywallScreen = () => {
         </div>
       </div>
 
-      <button className="paywall-cta-button" onClick={() => navigate('/error')}>
+      {/* Кнопка теперь вызывает новую функцию handleBuyClick */}
+      <button className="paywall-cta-button" onClick={handleBuyClick}>
         Buy credits and create sticker pack →
       </button>
     </div>
