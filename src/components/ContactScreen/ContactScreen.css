@@ -1,0 +1,117 @@
+.contact-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 100px 1.5rem 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.contact-content {
+  width: 100%;
+  max-width: 350px;
+}
+
+.contact-title {
+  font-size: 2.2em;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.contact-subtitle {
+  color: #555;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.input-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.phone-input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2em;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  box-sizing: border-box;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+
+.phone-input:focus {
+  outline: none;
+  border-color: #646cff;
+}
+
+/* --- Выбор мессенджера --- */
+.messenger-selection {
+  /* 1. Изменено для отображения в ряд */
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.messenger-button {
+  /* Заставляем кнопки делить пространство поровну */
+  flex: 1; 
+  padding: 0.8rem; /* Немного уменьшим паддинг для компактности */
+  font-size: 1.1em;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  background-color: #ffffff;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.messenger-button.selected {
+  border-color: #646cff;
+  background-color: #f0f0ff;
+}
+
+/* Стили для иконок внутри кнопок */
+.messenger-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* --- Кнопка --- */
+.contact-cta-button {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 480px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.8em 1.5em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #646cff;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.25s;
+  z-index: 10;
+}
+
+.contact-cta-button:hover {
+  background-color: #535bf2;
+}
+
+.contact-cta-button:disabled {
+  background-color: #c0c0e0;
+  cursor: not-allowed;
+}
