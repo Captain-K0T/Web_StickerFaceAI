@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef, ChangeEvent } from 'react';
 import './UploadScreen.css';
 
-// Определяем тип для пропсов
 type UploadScreenProps = {
   onNavigate: () => void;
 };
@@ -16,15 +15,13 @@ const UploadScreen = ({ onNavigate }: UploadScreenProps) => {
   
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  // Эффект для симуляции процесса обработки
   useEffect(() => {
     if (!isProcessing) return;
 
-    // Сразу устанавливаем первый шаг
-    setProcessingStep("Анализируем лицо...");
+    setProcessingStep("Analyzing face...");
 
-    const totalDuration = 4000; // Ровно 4 секунды
-    const intervalTime = 40;    // Обновление каждые 40мс для плавности
+    const totalDuration = 4000;
+    const intervalTime = 40;
     const increment = 100 / (totalDuration / intervalTime);
 
     const interval = setInterval(() => {
@@ -33,16 +30,15 @@ const UploadScreen = ({ onNavigate }: UploadScreenProps) => {
 
         if (newProgress >= 100) {
           clearInterval(interval);
-          setProcessingStep("Готово! Твои стикеры выглядят потрясающе.");
+          setProcessingStep("Done! Your stickers look amazing.");
           setIsComplete(true);
           return 100;
         }
 
-        // Обновляем текстовый шаг в зависимости от прогресса
         if (newProgress >= 66) {
-          setProcessingStep("Подбираем стили...");
+          setProcessingStep("Applying styles...");
         } else if (newProgress >= 33) {
-          setProcessingStep("Генерируем эмоции...");
+          setProcessingStep("Generating emotions...");
         }
 
         return newProgress;
@@ -60,7 +56,6 @@ const UploadScreen = ({ onNavigate }: UploadScreenProps) => {
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
-      // 1. Ограничиваем длину имени файла
       const name = file.name;
       const truncatedName = name.length > 10 ? `${name.substring(0, 10)}...` : name;
       setFileName(truncatedName);
@@ -86,16 +81,15 @@ const UploadScreen = ({ onNavigate }: UploadScreenProps) => {
       </div>
 
       <div className="upload-content">
-        <h2 className="upload-title">Загрузи своё лучшее селфи</h2>
-        {/* 2. Убрали лишнюю надпись */}
+        <h2 className="upload-title">Upload your best selfie</h2>
         <p className="upload-subtitle">
-          Мы проанализируем его и создадим магию ✨.
+          We'll analyze it and create some magic ✨.
         </p>
 
         {!isProcessing && !isComplete && (
           <div className="upload-box" onClick={handleUploadBoxClick}>
             <div className="upload-box-icon">+</div>
-            <div className="upload-box-text">Нажми или перетащи фото сюда</div>
+            <div className="upload-box-text">Click or drag a photo here</div>
           </div>
         )}
 
@@ -117,7 +111,7 @@ const UploadScreen = ({ onNavigate }: UploadScreenProps) => {
 
       {isComplete && (
         <button className="upload-cta-button" onClick={onNavigate}>
-          Показать результат →
+          Show result →
         </button>
       )}
     </div>

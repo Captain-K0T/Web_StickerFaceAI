@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './ContactScreen.css';
 
-// Импортируем иконки. Убедись, что файлы wa.svg и tg.svg лежат в src/assets/
+// Make sure wa.svg and tg.svg are in the src/assets/ folder
 import whatsAppIcon from '../../assets/wa.svg';
 import telegramIcon from '../../assets/tg.svg';
 
@@ -22,23 +22,21 @@ const ContactScreen = ({ onNavigate }: ContactScreenProps) => {
       </div>
 
       <div className="contact-content">
-        <h2 className="contact-title">Почти готово!</h2>
+        <h2 className="contact-title">Almost there!</h2>
         <p className="contact-subtitle">
-          Куда отправить твой стикерпак? Введи свой номер телефона.
+          Where should we send your sticker pack? Enter your phone number.
         </p>
 
         <div className="input-wrapper">
           <input
             type="tel"
             className="phone-input"
-            // 2. Плейсхолдер изменен
             placeholder="+1 234 567 89 00"
             value={phoneNumber}
             onChange={(e) => setPhoneNumber(e.target.value)}
           />
         </div>
 
-        {/* 1. Блок с кнопками теперь будет отображать их в ряд */}
         <div className="messenger-selection">
           <button
             className={`messenger-button ${selectedMessenger === 'whatsapp' ? 'selected' : ''}`}
@@ -62,7 +60,7 @@ const ContactScreen = ({ onNavigate }: ContactScreenProps) => {
         onClick={onNavigate}
         disabled={isButtonDisabled}
       >
-        Получить мои стикеры →
+        Get my stickers →
       </button>
     </div>
   );

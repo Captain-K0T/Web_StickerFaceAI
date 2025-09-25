@@ -16,13 +16,13 @@ const StartScreen = ({ onNavigate }: StartScreenProps) => {
       </div>
 
       <h1 className="title">Stickerface AI</h1>
-      <p className="subtitle">Твой личный стикерпак за 1 минуту.</p>
+      <p className="subtitle">Your personal sticker pack in 1 minute.</p>
       <p className="description">
-        Загрузи одно фото — получи 20+ уникальных стикеров в стиле аниме, Ghibli или GTA.
+        Upload one photo — get 20+ unique stickers in Anime, Ghibli, or GTA style.
       </p>
       {/* Добавляем обработчик onClick */}
       <button className="cta-button" onClick={onNavigate}>
-        Создать свой стикерпак →
+        Create your sticker pack →
       </button>
     </div>
   );

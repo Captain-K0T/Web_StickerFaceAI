@@ -23,25 +23,25 @@ const FeaturesScreen = ({ onNavigate }: FeaturesScreenProps) => {
       </div>
 
       <div className="features-header">
-        <h2 className="features-title">Как это работает?</h2>
+        <h2 className="features-title">How does it work?</h2>
         <div className="tabs">
           <button
             className={`tab ${activeTab === 'photo' ? 'active' : ''}`}
             onClick={() => setActiveTab('photo')}
           >
-            📷 Фото
+            📷 Photo
           </button>
           <button
             className={`tab ${activeTab === 'styles' ? 'active' : ''}`}
             onClick={() => setActiveTab('styles')}
           >
-            🎨 Стили
+            🎨 Styles
           </button>
           <button
             className={`tab ${activeTab === 'text' ? 'active' : ''}`}
             onClick={() => setActiveTab('text')}
           >
-            ✏️ Текст
+            ✏️ Text
           </button>
         </div>
       </div>
@@ -69,20 +69,20 @@ const FeaturesScreen = ({ onNavigate }: FeaturesScreenProps) => {
         <div className="tab-text-content">
           {activeTab === 'photo' && (
             <div className="content-item">
-              <h3>Одно фото — целый набор</h3>
-              <p>Просто загрузи любое селфи. Наш AI мгновенно сгенерирует стикеры с разными эмоциями.</p>
+              <h3>One photo — a whole set</h3>
+              <p>Just upload any selfie. Our AI will instantly generate stickers with different emotions.</p>
             </div>
           )}
           {activeTab === 'styles' && (
             <div className="content-item">
-              <h3>Сотни стилей на любой вкус</h3>
-              <p>Кем ты будешь сегодня? Персонажем Симпсонов, героем киберпанка или жителем Готэма?</p>
+              <h3>Hundreds of styles for any taste</h3>
+              <p>Who will you be today? A character from The Simpsons, a cyberpunk hero, or a resident of Gotham?</p>
             </div>
           )}
           {activeTab === 'text' && (
             <div className="content-item">
-              <h3>Добавь свои шутки</h3>
-              <p>Сделай стикеры по-настоящему своими. Добавляй уникальные надписи или используй наши подписи.</p>
+              <h3>Add your own jokes</h3>
+              <p>Make stickers truly yours. Add unique captions or use our default ones.</p>
             </div>
           )}
         </div>
@@ -90,7 +90,7 @@ const FeaturesScreen = ({ onNavigate }: FeaturesScreenProps) => {
 
       {/* Привязываем onNavigate к кнопке */}
       <button className="features-cta-button" onClick={onNavigate}>
-        Отлично, я готов! →
+        Great, I'm ready! →
       </button>
     </div>
   );
