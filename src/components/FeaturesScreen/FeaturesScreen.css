@@ -1,0 +1,170 @@
+.features-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 160px 1.5rem 100px 1.5rem; 
+}
+
+/* --- Фиксированные элементы --- */
+
+.progress-bar-container {
+  position: fixed;
+  top: 10px;
+  left: 0;
+  right: 0;
+  width: 90%;
+  max-width: 480px;
+  margin: 0 auto;
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  z-index: 10;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #646cff;
+  border-radius: 4px;
+}
+
+.features-header {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 1rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.features-cta-button {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 480px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.8em 1.5em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #646cff;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.25s;
+  z-index: 10;
+}
+
+.features-cta-button:hover {
+  background-color: #535bf2;
+}
+
+/* --- Основной контент --- */
+
+.features-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.features-title {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.tab {
+  padding: 0.5em 1em;
+  font-size: 1.2em;
+  color: #333;
+  background-color: transparent;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab.active {
+  border-color: #646cff;
+  background-color: #f0f0ff;
+  font-weight: 600;
+}
+
+/* --- Блок с визуалом --- */
+.visual-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Таб "Фото" */
+.photo-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.photo-original-img {
+  width: 140px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Стили для нового сгруппированного изображения */
+.stickers-group-img {
+  width: 160px;
+  height: auto;
+}
+
+/* Табы "Стили" и "Текст" */
+.styles-visual, .text-visual {
+  width: 100%;
+  height: 250px; /* Задаем контейнеру фиксированную высоту */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-visual-img {
+  max-width: 100%;
+  max-height: 100%; /* Картинка займет всю высоту контейнера, но не более */
+  object-fit: contain; /* Гарантирует, что вся картинка будет видна без обрезки */
+  height: auto;
+  width: auto;
+}
+
+/* --- Блок с текстом --- */
+.tab-text-content {
+  text-align: center;
+}
+
+.content-item h3 {
+  font-size: 1.4em;
+  margin-bottom: 0.5rem;
+}
+
+.content-item p {
+  color: #555;
+  line-height: 1.6;
+}
