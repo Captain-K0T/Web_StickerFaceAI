@@ -1,0 +1,69 @@
+.start-screen-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.images-container {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.demo-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Обновленное правило для обеих картинок */
+.demo-image-positioned {
+  object-position: 50% 15%; /* Смещаем еще выше */
+}
+
+.title {
+  font-size: 3.5em;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #213547;
+  white-space: nowrap;
+}
+
+.subtitle {
+  font-size: 1.5em;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.description {
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 2rem;
+  max-width: 400px;
+}
+
+.cta-button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.8em 1.5em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #646cff;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.cta-button:hover {
+  background-color: #535bf2;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
