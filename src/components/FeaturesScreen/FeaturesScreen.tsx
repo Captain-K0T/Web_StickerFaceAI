@@ -1,15 +1,19 @@
 import { useState } from 'react';
 import './FeaturesScreen.css';
 
-// Импорты картинок
 import photoOriginal from '../../assets/2-1-1.png';
-import stickersGroup from '../../assets/2-1-6.png'; // Убедись, что этот файл есть в /assets
+import stickersGroup from '../../assets/2-1-6.png';
 import stylesExample from '../../assets/2-2-2.png';
 import textExample from '../../assets/2-3-1.png';
 
 type Tab = 'photo' | 'styles' | 'text';
 
-const FeaturesScreen = () => {
+// Добавляем пропс onNavigate
+type FeaturesScreenProps = {
+  onNavigate: () => void;
+};
+
+const FeaturesScreen = ({ onNavigate }: FeaturesScreenProps) => {
   const [activeTab, setActiveTab] = useState<Tab>('photo');
 
   return (
@@ -62,7 +66,6 @@ const FeaturesScreen = () => {
           )}
         </div>
 
-        {/* ВОТ ЭТОТ БЛОК БЫЛ СЛУЧАЙНО УДАЛЕН. ТЕПЕРЬ ОН НА МЕСТЕ */}
         <div className="tab-text-content">
           {activeTab === 'photo' && (
             <div className="content-item">
@@ -85,7 +88,8 @@ const FeaturesScreen = () => {
         </div>
       </div>
 
-      <button className="features-cta-button">
+      {/* Привязываем onNavigate к кнопке */}
+      <button className="features-cta-button" onClick={onNavigate}>
         Отлично, я готов! →
       </button>
     </div>
