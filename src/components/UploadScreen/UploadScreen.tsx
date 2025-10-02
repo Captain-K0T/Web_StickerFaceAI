@@ -75,7 +75,7 @@ const UploadScreen = () => {
 
       <div className="progress-bar-container">
         {/* --- ИЗМЕНЕНИЕ ЗДЕСЬ --- */}
-        <div className="progress-bar" style={{ width: '66.6%' }}></div>
+        <div className="progress-bar" style={{ width: '71.4%' }}></div>
       </div>
 
       <div className="upload-content">

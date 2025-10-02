@@ -16,7 +16,7 @@ const ContactScreen = () => {
     <div className="contact-container">
       <div className="progress-bar-container">
         {/* --- ИЗМЕНЕНИЕ ЗДЕСЬ --- */}
-        <div className="progress-bar" style={{ width: '83.3%' }}></div>
+        <div className="progress-bar" style={{ width: '85.7%' }}></div>
       </div>
 
       <div className="contact-content">

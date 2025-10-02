@@ -8,7 +8,8 @@ const TextScreen = () => {
   return (
     <div className="feature-screen-container">
       <div className="progress-bar-container">
-        <div className="progress-bar" style={{ width: '50%' }}></div>
+        {/* --- ИЗМЕНЕНИЕ ЗДЕСЬ --- */}
+        <div className="progress-bar" style={{ width: '42.9%' }}></div>
       </div>
 
       <div className="feature-content-wrapper">
@@ -21,7 +22,8 @@ const TextScreen = () => {
         </div>
       </div>
 
-      <button className="feature-cta-button" onClick={() => navigate('/upload')}>
+      {/* --- ИЗМЕНЕНИЕ ЗДЕСЬ (навигация) --- */}
+      <button className="feature-cta-button" onClick={() => navigate('/style-selection')}>
         Awesome, I'm ready! →
       </button>
     </div>

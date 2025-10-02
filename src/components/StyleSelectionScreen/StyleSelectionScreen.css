@@ -1,0 +1,116 @@
+.style-selection-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  /* --- ИЗМЕНЕНИЕ ЗДЕСЬ: Уменьшаем боковые отступы --- */
+  padding: 80px 1rem 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.style-selection-content {
+  width: 100%;
+}
+
+.style-selection-title {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.style-selection-subtitle {
+  color: #555;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+/* --- Сетка стилей --- */
+.styles-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.style-tab {
+  padding: 0.7rem 0.8rem;
+  font-size: 1em; 
+  font-weight: 600;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  background-color: #ffffff;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.style-tab.selected {
+  border-color: #646cff;
+  background-color: #f0f0ff;
+}
+
+.style-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+}
+
+/* --- Поле для ввода --- */
+.style-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 1em;
+  font-family: inherit;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  box-sizing: border-box;
+  resize: none;
+  transition: border-color 0.2s;
+}
+
+.style-input:focus,
+.style-input.selected {
+  outline: none;
+  border-color: #646cff;
+}
+
+
+/* --- Кнопка --- */
+.style-selection-cta-button {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 480px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.8em 1.5em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #646cff;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.25s;
+  z-index: 10;
+}
+
+.style-selection-cta-button:hover {
+  background-color: #535bf2;
+}
+
+.style-selection-cta-button:disabled {
+  background-color: #c0c0e0;
+  cursor: not-allowed;
+}

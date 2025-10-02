@@ -8,7 +8,8 @@ const StylesScreen = () => {
   return (
     <div className="feature-screen-container">
       <div className="progress-bar-container">
-        <div className="progress-bar" style={{ width: '33.3%' }}></div>
+        {/* --- ИЗМЕНЕНИЕ ЗДЕСЬ --- */}
+        <div className="progress-bar" style={{ width: '28.6%' }}></div>
       </div>
 
       <div className="feature-content-wrapper">

@@ -10,7 +10,8 @@ const PhotoScreen = () => {
   return (
     <div className="feature-screen-container">
       <div className="progress-bar-container">
-        <div className="progress-bar" style={{ width: '16.6%' }}></div>
+        {/* --- ИЗМЕНЕНИЕ ЗДЕСЬ --- */}
+        <div className="progress-bar" style={{ width: '14.3%' }}></div>
       </div>
 
       <div className="feature-content-wrapper">
