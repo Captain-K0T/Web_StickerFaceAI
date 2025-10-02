@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, type ChangeEvent } from 'react'; // <-- ИЗМЕНЕНИЕ ЗДЕСЬ
+import { useState, useEffect, useRef, type ChangeEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './UploadScreen.css';
 
@@ -74,7 +74,8 @@ const UploadScreen = () => {
       />
 
       <div className="progress-bar-container">
-        <div className="progress-bar" style={{ width: '50%' }}></div>
+        {/* --- ИЗМЕНЕНИЕ ЗДЕСЬ --- */}
+        <div className="progress-bar" style={{ width: '66.6%' }}></div>
       </div>
 
       <div className="upload-content">

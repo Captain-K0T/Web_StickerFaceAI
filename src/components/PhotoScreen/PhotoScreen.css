@@ -1,0 +1,111 @@
+.feature-screen-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 80px 1.5rem 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Центрируем контент по вертикали */
+  text-align: center;
+  min-height: 100vh;
+}
+
+.feature-content-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- Фиксированные элементы --- */
+
+.progress-bar-container {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 480px;
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  z-index: 10;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #646cff;
+  border-radius: 4px;
+  transition: width 0.3s ease-in-out;
+}
+
+.feature-cta-button {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 480px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.8em 1.5em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #646cff;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.25s;
+  z-index: 10;
+}
+
+.feature-cta-button:hover {
+  background-color: #535bf2;
+}
+
+
+/* --- Основной контент --- */
+
+.feature-title {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.visual-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.photo-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.photo-original-img {
+  width: 140px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.stickers-group-img {
+  width: 160px;
+  height: auto;
+}
+
+.text-content p {
+  color: #555;
+  line-height: 1.6;
+  max-width: 350px;
+  margin: 0 auto;
+}

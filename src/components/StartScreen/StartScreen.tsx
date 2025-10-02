@@ -18,7 +18,8 @@ const StartScreen = () => {
       <p className="description">
         Upload one photo — get 20+ unique stickers in Anime, Ghibli, or GTA style.
       </p>
-      <button className="cta-button" onClick={() => navigate('/features')}>
+      {/* --- ИЗМЕНЕНИЕ ЗДЕСЬ --- */}
+      <button className="cta-button" onClick={() => navigate('/photo')}>
         Create your sticker pack →
       </button>
     </div>
