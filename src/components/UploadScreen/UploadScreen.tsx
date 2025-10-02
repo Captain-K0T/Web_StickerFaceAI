@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, ChangeEvent } from 'react';
+import { useState, useEffect, useRef, type ChangeEvent } from 'react'; // <-- ИЗМЕНЕНИЕ ЗДЕСЬ
 import { useNavigate } from 'react-router-dom';
 import './UploadScreen.css';
 

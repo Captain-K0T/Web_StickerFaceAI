@@ -1,7 +1,14 @@
-const PIXEL_ID = '1869867667255042'; // Твой ID из предоставленного файла
+const PIXEL_ID = '1869867667255042'; // Твой ID
+
+declare global {
+  interface Window {
+    fbq?: (...args: any[]) => void; // Делаем fbq опциональным, чтобы проверка работала
+    _fbq?: any;
+  }
+}
 
 export const init = () => {
-  if ((window as any).fbq) return; // Предотвращаем повторную инициализацию
+  if (window.fbq) return;
 
   const script = document.createElement('script');
   script.innerHTML = `
@@ -13,21 +20,22 @@ export const init = () => {
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    (window as any).fbq('init', '${PIXEL_ID}');
   `;
   document.head.appendChild(script);
+
+  const initCall = document.createElement('script');
+  initCall.innerHTML = `window.fbq('init', '${PIXEL_ID}');`;
+  document.head.appendChild(initCall);
 };
 
-// Функция для отслеживания просмотров страниц
 export const pageview = () => {
-  if ((window as any).fbq) {
-    (window as any).fbq('track', 'PageView');
+  if (window.fbq) {
+    window.fbq('track', 'PageView');
   }
 };
 
-// Функция для отслеживания кастомных событий
 export const event = (name: string, options = {}) => {
-  if ((window as any).fbq) {
-    (window as any).fbq('track', name, options);
+  if (window.fbq) {
+    window.fbq('track', name, options);
   }
 };
